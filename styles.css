@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    font-weight: 200;
+    font-smoothing: antialiased;
+    user-select: none;
+}
+html, body {
+    overflow: hidden;
+}
+body {
+    margin-top: 10px;
+    background: black;
+    font-size: 14px;
+    font-family:'Press Start 2P', cursive;
+}
+.gap {
+    width: 100%;
+}
+/* Wrapper */
+ .wrapper {
+    width: 320px;
+    margin: 0 auto;
+}
+.ready, .start {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    color: white;
+    line-height: 20px;
+    text-align: center;
+}
+.ready {
+    color: green;
+    font-size: 25px;
+    top: 20%;
+    color: rgb(0, 141, 40);
+    text-shadow: 1px 1px 1px #fff;
+}
+.ready {
+    display: none;
+}
+.playAgain img, .play img {
+    width: 50px;
+    margin-top: 10px;
+}
+.madeby {
+    color: rgb(0, 141, 40);
+    text-shadow: 1px 1px 1px #fff;
+    padding-bottom: 7px;
+    font-size: 11px;
+}
+
+.madeby a { color: green; }
+
+.new {
+    color: red;
+}
+.gameOver {
+    position: absolute;
+    display: none;
+    width: 266px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 31px;
+    background: rgba(255, 255, 255, 0.85);
+    margin-left: 19px;
+    color: #0D8673;
+    margin-top: 74px;
+    border: 1px solid white;
+    border-radius: 5px;
+    z-index: 10000;
+}
+
+.new {
+    display: none;
+}
+/* Window */
+ .window {
+    height: 450px;
+    background: url('http://www.albertopasca.it/whiletrue/wp-content/uploads/2014/02/MarioBackground-scrolling-top.png');
+    position: relative;
+    overflow: hidden;
+    animation-name: animateBg;
+    animation-timing-function: linear;
+    animation-duration: 3000s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+   background-size: cover;
+}
+.animatePipes {
+    animation-name: animatePipes;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+/* Score */
+ .score {
+    position: absolute;
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 200%;
+    padding-top: 25px;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: 2px 2px 0 #000;
+    z-index: 4;
+}
+/* Bird */
+ .bird {
+    height: 28px;
+    width: 40px;
+    background: url('https://s28.postimg.org/k90gybbtl/bird_Sprite.png');
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    z-index: 3;
+    animation: birdFlap 0.2s steps(3, end) infinite alternate;
+}
+.birdDies {
+    transform: rotate(90deg) !important;
+}
+@keyframes birdFlap {
+    0% {
+        background-position: 0 84px;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+/* Pipes */
+ .pipes {
+    position: absolute;
+    top: -225px;
+    width: 100000px;
+    left: 360px;
+}
+.pipesWpr {
+    float: left;
+    margin-right: 90px;
+}
+.pipe {
+    width: 60px;
+    height: 450px;
+    position: relative;
+    z-index: 2;
+}
+.pipe.topHalf {
+    background: url('https://s21.postimg.org/kyr2rnpzr/pipe.png') bottom;
+}
+.pipe.bottomHalf {
+    background: url('https://s21.postimg.org/kyr2rnpzr/pipe.png') top;
+}
+@keyframes animateBg {
+    100% {
+        background-position:-100000px 0;
+    }
+}
+@keyframes animatePipes {
+    100% {
+        left: -10000000px;
+    }
+}
